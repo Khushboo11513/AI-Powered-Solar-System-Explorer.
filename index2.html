@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Animation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+       
+        /* Make the planets rotate on their axis */
+        .planet circle {
+            animation: rotatePlanet 30s infinite linear;
+        }
+        .planet1 circle {
+            animation: rotatePlanet 6s infinite linear;
+        }
+        .planet2 circle {
+            animation: rotatePlanet 13s infinite linear;
+        }
+        .planet3 circle {
+            animation: rotatePlanet 18s infinite linear;
+        }
+        .planet4 circle {
+            animation: rotatePlanet 20s infinite linear;
+        }
+        .planet5 circle {
+            animation: rotatePlanet 16s infinite linear;
+        }
+        .planet6 circle {
+            animation: rotatePlanet 14s infinite linear;
+        }
+        .planet7 circle {
+            animation: rotatePlanet 10s infinite linear;
+        }
+    
+        /* Rotate each planet on its own axis with different speeds */
+        .mercury .planet-circle {
+            animation-duration: 30s; /* Mercury rotates faster */
+        }
+        .venus .planet-circle {
+            animation-duration: 12s;
+        }
+        .earth .planet-circle {
+            animation-duration: 25s;
+        }
+        .mars .planet-circle {
+            animation-duration: 2s;
+        }
+        .jupiter .planet-circle {
+            animation-duration: 16s;
+        }
+        .saturn .planet-circle {
+            animation-duration: 38s;
+        }
+        .uranus .planet-circle {
+            animation-duration: 2s;
+        }
+        .neptune .planet-circle {
+            animation-duration: 22s;
+        }
+    
+        /* Keyframe animation to rotate the planet */
+        @keyframes rotatePlanet {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    
+    
+        .planet-box:hover {
+            background-color: #777;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="solar-system-container">
+        <svg width="800" height="800" viewBox="-400 -400 800 800" id="solar-system">
+            <!-- Background -->
+            <rect x="-400" y="-400" width="800" height="800" class="background"/>
+
+            <!-- Sun -->
+            <circle cx="0" cy="0" r="50" class="sun"/>
+            <text x="60" y="0" class="planet-label">Sun</text>
+
+            <!-- Mercury -->
+            <g class="planet mercury-anim">
+                <circle cx="0" cy="0" r="80" class="orbit"/>
+                <circle cx="80" cy="0" r="8" class="mercury"/>
+            </g>
+
+            <!-- Venus -->
+            <g class="planet1 venus-anim">
+                <circle cx="0" cy="0" r="120" class="orbit"/>
+                <circle cx="120" cy="0" r="12" class="venus"/>
+            </g>
+
+            <!-- Earth -->
+            <g class="planet2 earth-anim">
+                <circle cx="0" cy="0" r="160" class="orbit"/>
+                <circle cx="160" cy="0" r="15" class="earth"/>
+            </g>
+
+            <!-- Mars -->
+            <g class="planet3 mars-anim">
+                <circle cx="0" cy="0" r="200" class="orbit"/>
+                <circle cx="200" cy="0" r="10" class="mars"/>
+            </g>
+
+            <!-- Jupiter -->
+            <g class="planet4 jupiter-anim">
+                <circle cx="0" cy="0" r="240" class="orbit"/>
+                <circle cx="240" cy="0" r="25" class="jupiter"/>
+            </g>
+
+            <!-- Saturn -->
+            <g class="planet5 saturn-anim">
+                <circle cx="0" cy="0" r="290" class="orbit"/>
+                <circle cx="290" cy="0" r="20" class="saturn"/>
+            </g>
+
+            <!-- Uranus -->
+            <g class="planet6 uranus-anim">
+                <circle cx="0" cy="0" r="340" class="orbit"/>
+                <circle cx="340" cy="0" r="18" class="uranus"/>
+            </g>
+
+            <!-- Neptune -->
+            <g class="planet7 neptune-anim">
+                <circle cx="0" cy="0" r="380" class="orbit"/>
+                <circle cx="380" cy="0" r="17" class="neptune"/>
+            </g>
+        </svg>
+    </div>
+    <!-- Button to link to index2.html -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="index3.html">
+            <button style="padding: 10px 20px; font-size: 16px;">Planets Information</button>
+        </a>
+    </div>
+
+    <div id="planet-info">
+        <button class="planet-box" data-info="The Sun is the center of the Solar System.">Sun</button>
+        <button class="planet-box" data-info="Mercury is the smallest planet and closest to the Sun.">Mercury</button>
+        <button class="planet-box" data-info="Venus is the second planet and the hottest.">Venus</button>
+        <button class="planet-box" data-info="Earth is the only planet known to support life.">Earth</button>
+        <button class="planet-box" data-info="Mars is known as the Red Planet.">Mars</button>
+        <button class="planet-box" data-info="Jupiter is the largest planet.">Jupiter</button>
+        <button class="planet-box" data-info="Saturn is known for its rings.">Saturn</button>
+        <button class="planet-box" data-info="Uranus has a unique sideways rotation.">Uranus</button>
+        <button class="planet-box" data-info="Neptune is the farthest and a deep blue color.">Neptune</button>
+    </div>
+    
+
+         <script>
+        // Add event listeners to the planet info boxes
+        document.querySelectorAll(".planet-box").forEach(box => {
+            box.addEventListener("click", () => {
+                const info = box.getAttribute("data-info");
+                if (info) {
+                    const speech = new SpeechSynthesisUtterance(info);
+                    speech.lang = "en-US";
+                    window.speechSynthesis.speak(speech);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

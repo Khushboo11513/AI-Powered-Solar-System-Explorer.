@@ -1,0 +1,72 @@
+/* Styling for the solar system */
+#solar-system-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: 90vh;
+}
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: black; /* Set the background color for the entire page */
+    overflow: hidden; /* Optional: Prevent scrolling if not required */
+}
+
+.background {
+    fill: black;
+}
+
+.sun {
+    fill: yellow;
+}
+
+.orbit {
+    fill: none;
+    stroke: white;
+    stroke-width: 0.5;
+}
+
+.mercury { fill: gray; }
+.venus { fill: orange; }
+.earth { fill: blue; }
+.mars { fill: red; }
+.jupiter { fill: brown; }
+.saturn { fill: khaki; }
+.uranus { fill: lightblue; }
+.neptune { fill: darkblue; }
+
+.planet-label {
+    fill: white;
+    font-size: 10px;
+    text-anchor: middle;
+}
+
+/* Planet info boxes (vertical alignment) */
+#planet-info {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    
+   
+}
+
+.planet-box {
+    margin: 5px 0;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+.planet-box:hover {
+    background-color: rgb(0, 255, 153);
+    cursor: pointer;
+
+}
+
+

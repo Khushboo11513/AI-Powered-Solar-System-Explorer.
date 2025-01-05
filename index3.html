@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="solar-system-container">
+        <svg width="800" height="800" viewBox="-400 -400 800 800" id="solar-system">
+            <rect x="-400" y="-400" width="800" height="800" class="background"/>
+
+            <!-- Sun -->
+            <circle cx="0" cy="0" r="50" class="sun"/>
+            <text x="60" y="0" class="planet-label">Sun</text>
+
+            <!-- Mercury -->
+            <g class="planet-group mercury-group">
+                <circle cx="0" cy="0" r="80" class="orbit"/>
+                <a href="mercury.html">
+                    <circle cx="80" cy="0" r="8" class="mercury"/>
+                    <text x="90" y="5" class="planet-label">Mercury</text>
+                </a>
+            </g>
+
+            <!-- Venus -->
+            <g class="planet-group venus-group">
+                <circle cx="0" cy="0" r="120" class="orbit"/>
+                <a href="venus.html">
+                    <circle cx="120" cy="0" r="12" class="venus"/>
+                    <text x="135" y="5" class="planet-label">Venus</text>
+                </a>
+            </g>
+
+            <!-- Earth -->
+            <g class="planet-group earth-group">
+                <circle cx="0" cy="0" r="170" class="orbit"/>
+                <a href="earth.html">
+                    <circle cx="170" cy="0" r="15" class="earth"/>
+                    <text x="190" y="5" class="planet-label">Earth</text>
+                </a>
+            </g>
+
+            <!-- Mars -->
+            <g class="planet-group mars-group">
+                <circle cx="0" cy="0" r="220" class="orbit"/>
+                <a href="mars.html">
+                    <circle cx="220" cy="0" r="10" class="mars"/>
+                    <text x="235" y="5" class="planet-label">Mars</text>
+                </a>
+            </g>
+
+            <!-- Jupiter -->
+            <g class="planet-group jupiter-group">
+                <circle cx="0" cy="0" r="280" class="orbit"/>
+                <a href="jupiter.html">
+                    <circle cx="280" cy="0" r="25" class="jupiter"/>
+                    <text x="310" y="5" class="planet-label">Jupiter</text>
+                </a>
+            </g>
+
+            <!-- Saturn -->
+            <g class="planet-group saturn-group">
+                <circle cx="0" cy="0" r="330" class="orbit"/>
+                <a href="saturn.html">
+                    <circle cx="330" cy="0" r="20" class="saturn"/>
+                    <text x="360" y="5" class="planet-label">Saturn</text>
+                </a>
+            </g>
+
+            <!-- Uranus -->
+            <g class="planet-group uranus-group">
+                <circle cx="0" cy="0" r="360" class="orbit"/>
+                <a href="uranus.html">
+                    <circle cx="360" cy="0" r="18" class="uranus"/>
+                    <text x="385" y="5" class="planet-label">Uranus</text>
+                </a>
+            </g>
+
+            <!-- Neptune -->
+            <g class="planet-group neptune-group">
+                <circle cx="0" cy="0" r="390" class="orbit"/>
+                <a href="neptune.html">
+                    <circle cx="390" cy="0" r="17" class="neptune"/>
+                    <text x="415" y="5" class="planet-label">Neptune</text>
+                </a>
+            </g>
+        </svg>
+    </div>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar System Animation with AI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Solar System SVG Animation -->
+    <div id="solar-system-container">
+        <svg width="90%" height="90%" viewBox="-500 -500 1000 1000" id="solar-system">
+            <!-- Background -->
+            <rect x="500" y="500" width="800" height="1000" class="background"/>
+
+            <!-- Sun -->
+            <circle cx="0" cy="0" r="50" class="sun"/>
+            <text x="70" y="0" class="planet-label">Sun</text>
+
+            <!-- Mercury (no animation) -->
+            <g>
+                <circle cx="0" cy="0" r="100" class="orbit"/>
+                <circle cx="100" cy="0" r="8" class="mercury"/>
+                <text x="110" y="5" class="planet-label">Mercury</text>
+            </g>
+
+            <!-- Venus (no animation) -->
+            <g>
+                <circle cx="0" cy="0" r="150" class="orbit"/>
+                <circle cx="150" cy="0" r="12" class="venus"/>
+                <text x="165" y="5" class="planet-label">Venus</text>
+            </g>
+
+            <!-- Earth (no animation) -->
+            <g>
+                <circle cx="0" cy="0" r="200" class="orbit"/>
+                <circle cx="200" cy="0" r="15" class="earth"/>
+                <text x="220" y="5" class="planet-label">Earth</text>
+            </g>
+
+            <!-- Mars (no animation) -->
+            <g>
+                <circle cx="0" cy="0" r="250" class="orbit"/>
+                <circle cx="250" cy="0" r="10" class="mars"/>
+                <text x="270" y="5" class="planet-label">Mars</text>
+            </g>
+
+            <!-- Jupiter (no animation) -->
+            <g>
+                <circle cx="0" cy="0" r="320" class="orbit"/>
+                <circle cx="320" cy="0" r="25" class="jupiter"/>
+                <text x="320" y="5" class="planet-label">Jupiter</text>
+            </g>
+
+            <!-- Saturn (no animation) -->
+            <g>
+                <circle cx="0" cy="0" r="390" class="orbit"/>
+                <circle cx="390" cy="0" r="20" class="saturn"/>
+                <text x="420" y="5" class="planet-label">Saturn</text>
+            </g>
+
+            <!-- Uranus (no animation) -->
+            <g>
+                <circle cx="0" cy="0" r="460" class="orbit"/>
+                <circle cx="460" cy="0" r="18" class="uranus"/>
+                <text x="480" y="5" class="planet-label">Uranus</text>
+            </g>
+
+            <!-- Neptune (no animation) -->
+            <g>
+                <circle cx="0" cy="0" r="540" class="orbit"/>
+                <circle cx="540" cy="0" r="17" class="neptune"/>
+                <text x="560" y="5" class="planet-label">Neptune</text>
+            </g>
+        </svg>
+    </div>
+
+    <!-- Planet Info Boxes -->
+    <div id="planet-info">
+        <button class="planet-box" data-info="The Sun is the center of the Solar System. The sun is about 4.6 billion years old. Radius of sun is 695,700 km.">Sun</button>
+        <button class="planet-box" data-info="Mercury is the smallest planet and closest to the Sun." >Mercury</button>
+        <button class="planet-box" data-info="Venus is the second planet and the hottest.">Venus</button>
+        <button class="planet-box" data-info="Earth is the only planet known to support life.">Earth</button>
+        <button class="planet-box" data-info="Mars is known as the Red Planet.">Mars</button>
+        <button class="planet-box" data-info="Jupiter is the largest planet.">Jupiter</button>
+        <button class="planet-box" data-info="Saturn is known for its rings.">Saturn</button>
+        <button class="planet-box" data-info="Uranus has a unique sideways rotation.">Uranus</button>
+        <button class="planet-box" data-info="Neptune is the farthest and a deep blue color.">Neptune</button>
+    </div>
+
+    <!-- Button to link to index2.html -->
+    <div style="text-align: center; margin-top: 20px;">
+        <a href="index2.html">
+            <button style="padding: 10px 20px; font-size: 16px;">Go to Solar System Animation</button>
+        </a>
+    </div>
+
+    <script>
+        // Add event listeners to the planet info boxes
+        document.querySelectorAll(".planet-box").forEach(box => {
+            box.addEventListener("click", () => {
+                const info = box.getAttribute("data-info");
+                if (info) {
+                    const speech = new SpeechSynthesisUtterance(info);
+                    speech.lang = "en-US";
+                    window.speechSynthesis.speak(speech);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
